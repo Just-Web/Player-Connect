@@ -15,8 +15,8 @@ app.get('/home', function(req, res) {
   res.send('This is the Player-Connect homepage.');
 });
 
-app.get('/profile/:id', function(req, res) {
-  res.send('you requested to see a profile with the id of ' + req.params.id);
+app.get('/profile/:name', function(req, res) {
+  res.send('you requested to see a profile with the name of ' + req.params.name);
 });
 
 const port = process.env.PORT || 3000
