@@ -12,7 +12,7 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/home', function(req, res) {
-  res.send('This is the Player-Connect homepage.');
+  res.sendFile(__dirname + '/homepage.html');
 });
 
 app.get('/profile/:name', function(req, res) {
