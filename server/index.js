@@ -1,14 +1,13 @@
 const express = require('express');
 const app = express();
+var path = require('path');
 
 app.get('/', function(req, res) {
   res.send('Welcome to Player-Connect!!');
 });
 
 app.get('/about', function(req, res) {
-  res.send(
-    'Player-Connect is a place for gamers to meet up and find people to play games with.'
-  );
+  res.sendFile(path.resolve('../client/app/views/about.html'));
 });
 
 app.get('/home', function(req, res) {
