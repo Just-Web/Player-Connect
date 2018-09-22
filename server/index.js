@@ -11,7 +11,7 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/home', function(req, res) {
-  res.sendFile(__dirname + '/homepage.html');
+  res.sendFile(path.resolve('../client/app/views/homepage.html'));
 });
 
 app.get('/profile/:name', function(req, res) {
