@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
+  <head>
+    <title> REGISTER </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  </head>
   <body>
       <h1>
         REGISTER
       </h1>
-      <p>
-        You SIGN UP here
-      </p>
+        name
+        <input type="text" ng-model="userName" placeholder="enter your name"/>
+        <p>Your name is: {{userName}}</p>
+        email
+        <input type="text" ng-model="email" placeholder="enter your email"/>
+        <p>Your email is: {{email}}</p>
+        username
+        <input type="text" ng-model="username" placeholder="enter your username"/>
+        <p>Your username is: {{username}}</p>
+        password
+        <input type="text" ng-model="password" placeholder="enter your password"/>
+        <p>Your password is: {{password}}</p>
+
+
+
+
+
+
   </body>
 </html>
