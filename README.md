@@ -17,6 +17,7 @@
 - Install Mongoose - `npm install mongoose --save`
 - Install Body-Parser - `npm install body-parser --save`
 - Install Nodemon - `sudo npm i -g nodemon`
+- Install Passport - `npm install passport-local`
 
 ### Setup Environment Variables 
 - export PORT = 5000 (for mac)
