@@ -1,9 +1,17 @@
 const express = require('express');
+var path = require('path');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/nodekb');
+let db = mongoose.connection;
+
+//Init App
 const app = express();
 
+//Load View Engine
 app.set('view engine','ejs');
 
-var path = require('path');
+
 
 app.get('/', function(req, res) {
   res.send('Welcome to Player-Connect!!');
