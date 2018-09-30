@@ -28,3 +28,4 @@
 
 ### Client - ` grunt serve` 
 ### Server - `nodemon index.js`
+### Database - `mongod` `mongo` `use nodekb`
