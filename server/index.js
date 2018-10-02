@@ -2,19 +2,22 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 //const expressValidator = require ('express-validator');
 //const flash = require('connect-flash');
 //const session = require('express-session');
 
-mongoose.connect('mongodb://localhost/nodekb');
+require('./routes/users');
+
+mongoose.connect('mongodb://localhost/myapp');
 let db = mongoose.connection;
 
 //Check connection
-db.once('open',function(){
+db.once('open', function() {
   console.log('Connected to MongoDB');
 });
 
-db.on('error',function(err){
+db.on('error', function(err) {
   console.log(err);
 });
 
@@ -24,8 +27,12 @@ const app = express();
 //Bring in models
 let User = require('./models/user');
 
+//middleware
+app.use(bodyParser.json());
+app.use(cors());
+
 //Load View Engine
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
   res.send('Welcome to Player-Connect!!');
@@ -41,13 +48,20 @@ app.get('/home', function(req, res) {
 
 //dynamic content, using ejs template
 app.get('/profile/:id', function(req, res) {
-  var data = {age:29, job:'chef', hobbies:['eating', 'playing', 'climbing']};
-  res.render(path.resolve('../client/app/views/profile'), {id: req.params.id, data:data});
+  var data = {
+    age: 29,
+    job: 'chef',
+    hobbies: ['eating', 'playing', 'climbing']
+  };
+  res.render(path.resolve('../client/app/views/profile'), {
+    id: req.params.id,
+    data: data
+  });
 });
 
 //Route Files
 let users = require('./routes/users');
-app.use('/users',users);
+app.use('/users', users);
 
 const port = 9000
 app.listen(port, function() {
