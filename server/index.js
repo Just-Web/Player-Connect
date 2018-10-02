@@ -9,7 +9,7 @@ const cors = require('cors');
 
 require('./routes/users');
 
-mongoose.connect('mongodb://localhost/myapp');
+mongoose.connect('mongodb://localhost/playerconnect');
 let db = mongoose.connection;
 
 //Check connection
