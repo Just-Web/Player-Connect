@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 //const flash = require('connect-flash');
 //const session = require('express-session');
 
-mongoose.connect('mongodb://localhost/nodekb');
+mongoose.connect('mongodb://localhost/playerconnect');
 let db = mongoose.connection;
 
 //Check connection
